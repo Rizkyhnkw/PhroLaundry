@@ -8,6 +8,11 @@ const path = require('path');
 // Inisialisasi aplikasi Express
 const app = express();
 const PORT = process.env.PORT || 3000;
+const pelangganRoutes = require('./routes/pelanggan');
+const pesananRoutes = require('./routes/pesanan');
+
+app.use('/api/pelanggan', pelangganRoutes);
+app.use('/api/pesanan', pesananRoutes);
 
 // Import model yang sudah dipisahkan
 const Pelanggan = require('./models/pelanggan');

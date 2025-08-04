@@ -15,9 +15,9 @@ app.use('/api/pelanggan', pelangganRoutes);
 app.use('/api/pesanan', pesananRoutes);
 
 // Import model yang sudah dipisahkan
-const Pelanggan = require('./models/pelanggan');
-const Layanan = require('./models/layanan');
-const Pesanan = require('./models/pesanan');
+const Pelanggan = require('../models/pelanggan');
+const Layanan = require('../models/layanan');
+const Pesanan = require('../models/pesanan');
  
 // Middleware untuk menyajikan file statis dari folder 'public'
 app.use(express.static(path.join(__dirname, 'public')))

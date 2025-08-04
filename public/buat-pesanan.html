@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Pesanan Baru</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex h-screen">
+
+    <aside class="sidebar bg-gray-800 text-white p-6 shadow-lg flex flex-col justify-between">
+        <nav class="space-y-4">
+            <h2 class="text-xl font-bold">Laundry App</h2>
+            <a href="index.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Dashboard</a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Pesanan</a>
+            <a href="buat-pesanan.html" class="block py-2.5 px-4 bg-green-500 rounded transition duration-200 hover:bg-green-600">Buat Pesanan Baru</a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Laporan</a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Pengaturan</a>
+        </nav>
+        <div class="mt-auto">
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-red-500 text-red-100">Keluar</a>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Buat Pesanan Baru</h1>
+
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <form id="newOrderForm">
+                <div class="mb-4">
+                    <label for="customerName" class="block text-gray-700 font-semibold mb-2">Nama Pelanggan</label>
+                    <input type="text" id="customerName" name="customerName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Cari atau masukkan nama pelanggan..." required>
+                    <input type="hidden" id="pelangganId" name="pelangganId">
+                    <div id="customerSuggestions" class="mt-1 bg-white border rounded-lg shadow-lg max-h-40 overflow-y-auto hidden"></div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Detail Layanan</h3>
+                    <div id="serviceItems" class="space-y-4">
+                        </div>
+                    <button type="button" id="addServiceItem" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Tambah Layanan</button>
+                </div>
+
+                <div class="flex justify-end mb-6">
+                    <span class="text-2xl font-bold text-gray-800">Total: <span id="totalCost">Rp 0</span></span>
+                </div>
+
+                <button type="submit" class="w-full px-4 py-3 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600">Simpan Pesanan</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script_pesanan.js"></script>
+</body>
+</html>
